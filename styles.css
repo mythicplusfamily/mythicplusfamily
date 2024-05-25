@@ -4,17 +4,12 @@ html {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-body {
-  background-image: url('https://placehold.co/1920x1080');
-  background-size: contain;
-}
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
-  /* margin: 0px; */
+  margin: 0px;
   padding: 0px;
   font-weight: normal;
 }
@@ -44,7 +39,22 @@ h1 {
 }
 
 body {
-  background: #222;
+  background: url("./bg.jpg");
+  background-size: cover;
+  background-position: top;
+  color: #fff;
+}
+
+ul > li {
+  margin: 30px 0;
+}
+
+.content {
+  background: rgba(0,0,0, 0.5);
+  border: 1px solid #f8b700;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 .button {
@@ -54,11 +64,17 @@ body {
   border: 1px solid #000;
   border-radius: 10px;
   padding: 8px 20px;
-  margin: 25px;
-
+  margin-top: 425px;
 }
 
 .discord {
-  border-color: #fff;
+  color: #333;
+  border-color: #333;
   background-color: #cab2fb;
+}
+
+.recruitment {
+  color: #f8b700;
+  border-color: #f8b700;
+  background-color: #56201c;
 }

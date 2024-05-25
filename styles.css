@@ -1,0 +1,64 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-image: url('https://placehold.co/1920x1080');
+  background-size: contain;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  /* margin: 0px; */
+  padding: 0px;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.vertical-align {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.center {
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  color: #fff;
+}
+
+body {
+  background: #222;
+}
+
+.button {
+  text-decoration: none;
+  background: #840;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 8px 20px;
+  margin: 25px;
+
+}
+
+.discord {
+  border-color: #fff;
+  background-color: #cab2fb;
+}

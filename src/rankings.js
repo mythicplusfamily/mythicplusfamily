@@ -2,21 +2,25 @@ import { useQuery } from '@tanstack/react-query';
 import { classColors } from './constants';
 
 const limit = 20;
-
+const url =
+  'https://corsproxy.io/?' +
+  encodeURIComponent(
+    'https://raider.io/api/guilds/roster?region=us&realm=thrall&guild=Mythic%20Plus%20Family'
+  );
 export function Rankings() {
-  const url =
-    'https://corsproxy.io/?' +
-    encodeURIComponent(
-      'https://raider.io/api/guilds/roster?region=us&realm=thrall&guild=Mythic%20Plus%20Family'
-    );
   const { isPending, error, data } = useQuery({
-    queryKey: ['rankings'],
+    queryKey: ['roster'],
     queryFn: () =>
       fetch(url)
         .then((res) => res.json())
         .then(({ guildRoster: { roster } }) => {
           return roster
-            .filter((player) => player.rank !== 5 && player.rank !== 6)
+            .filter(
+              (player) =>
+                player.rank !== 5 &&
+                player.rank !== 6 &&
+                player.keystoneScores.allScore !== 0
+            )
             .sort(
               (
                 { keystoneScores: { allScore: a } },
@@ -24,8 +28,8 @@ export function Rankings() {
               ) => {
                 if (a) return b - a;
               }
-            )
-            .slice(0, limit);
+            );
+          // .slice(0, limit);
         }),
   });
   if (isPending) {
@@ -60,7 +64,7 @@ export function Rankings() {
 }
 
 function Ranking({ player }) {
-  console.log(player);
+  // console.log(player);
   return (
     <tr className='last:border-0 border-b border-slate-900'>
       <td

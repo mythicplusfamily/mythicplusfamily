@@ -1,29 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html {
-  box-sizing: border-box;
-  font-size: 16px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body, h1, h2, h3, h4, h5, h6, p, ol, ul {
-  margin: 0px;
-  padding: 0px;
-  font-weight: normal;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.vertical-align {
+/* .vertical-align {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -39,9 +22,7 @@ h1 {
 }
 
 body {
-  background: url("./bg.jpg");
-  background-size: cover;
-  background-position: top;
+  background-color: #333;
   color: #fff;
 }
 
@@ -53,8 +34,6 @@ ul > li {
   background: rgba(0,0,0, 0.5);
   border: 1px solid #f8b700;
   padding: 20px 50px;
-  display: flex;
-  flex-direction: column;
 }
 
 .button {
@@ -77,4 +56,9 @@ ul > li {
   color: #f8b700;
   border-color: #f8b700;
   background-color: #56201c;
+} */
+
+.loader {
+  border-radius: 50%;
+  border: 1px dashed red;
 }

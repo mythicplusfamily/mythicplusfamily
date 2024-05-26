@@ -60,6 +60,7 @@ export function Rankings() {
 }
 
 function Ranking({ player }) {
+  console.log(player);
   return (
     <tr className='last:border-0 border-b border-slate-900'>
       <td
@@ -67,7 +68,11 @@ function Ranking({ player }) {
           color: classColors[player.character.class.name],
         }}
       >
-        <div className='py-2'>{player.character.name}</div>
+        <div className='py-2'>
+          <a href={buildRaiderIOUrl(player)} target='_blank'>
+            {player.character.name}
+          </a>
+        </div>
       </td>
       <td
         className='text-right'
@@ -79,6 +84,12 @@ function Ranking({ player }) {
       </td>
     </tr>
   );
+}
+
+function buildRaiderIOUrl(player) {
+  const { realm, region, name } = player.character;
+
+  return `https://raider.io/characters/${region.slug}/${realm.slug}/${name}`;
 }
 
 function Loader() {

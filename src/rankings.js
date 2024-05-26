@@ -34,7 +34,7 @@ export function Rankings() {
 }
 
 function Ranking({ player }) {
-  console.log(player)
+  // console.log(player)
   return (
     <tr className='last:border-0 border-b border-slate-900'>
       <td style={{

@@ -5,8 +5,9 @@
   "source": "src/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build src/index.html --dist-dir=. --no-content-hash",
-    "dev": "parcel src/index.html --dist-dir=."
+    "prebuild": "git rm ./index.* ** cp ./dist/* ./",
+    "build": "parcel build src/index.html",
+    "dev": "parcel src/index.html"
   },
   "repository": {
     "type": "git",

@@ -28,9 +28,6 @@ export function Rankings() {
   }
   return (
     <div className='m-4 border-t-1 border-slate-900'>
-      <h3 className='text-center text-yellow-400 text-xl mt-8'>
-        Guild Leaderboard
-      </h3>
       <table
         className='table-auto w-full text-white'
         style={{

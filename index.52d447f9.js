@@ -30995,7 +30995,16 @@ function buildRaiderIOUrl(player) {
     return `https://raider.io/characters/${region.slug}/${realm.slug}/${name}`;
 }
 function filterByRating(rating) {
-    return (player)=>player.rank !== 5 && player.rank !== 6 && player.keystoneScores.allScore >= rating;
+    return (player)=>{
+        const isNotInactive = player.rank !== 6;
+        const isNotAlt = player.rank !== 7;
+        const hasScoreAboveThreshhold = player.keystoneScores.allScore >= rating;
+        const qualifies = isNotAlt && isNotInactive && hasScoreAboveThreshhold;
+        // if (hasScoreAboveThreshhold) {
+        //   console.log(player.name, qualifies);
+        // }
+        return qualifies;
+    };
 }
 function sortByRating({ keystoneScores: { allScore: a } }, { keystoneScores: { allScore: b } }) {
     if (a) return b - a;
